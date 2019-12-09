@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import MainPage from './navigation/MainPage';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default function App(): JSX.Element {
+    const sum = (a: number, b: number): number => {
+        return a + b;
+    }
+    return (
+        <div>
+            <MainPage />
+            Hello!! {sum(14, 14)};
+        </div>
+    )
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const root = document.getElementById('root')
+
+ReactDOM.render(<App />, root);

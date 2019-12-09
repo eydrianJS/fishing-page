@@ -1,58 +1,30 @@
 import React from 'react';
-import { createStyles, Theme } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Logo from '../components/Logo';
+import UserAvatar from '../components/UserAvatar';
+import LogButton from '../components/LogButton';
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
     },
     paper: {
+      padding: theme.spacing(2),
       textAlign: 'center',
+      color: theme.palette.text.secondary,
     },
-    header: {
-      width: '100%',
-      height: '50px',
-      textAlign: "left"
-    }
   }),
 );
 
-export default function Header() {
-  const classes = useStyles();
+export default function Header(props) {
+  const classes = useStyles(props.theme);
 
   return (
-    <>
-      <div className={classes.header}>
-        AAA
-      </div>
-      <div className={classes.header}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>xs=12</Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>xs=6</Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>xs=6</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-        </Grid>
-      </div>
-    </>
+      <>
+        <Logo />
+        <LogButton />
+        <UserAvatar />
+      </>
   );
 }
