@@ -12,16 +12,15 @@ export default function MainPage(props) {
     <div>
       <header className={classes.header}>
         <div className={classes.images}>
-          <HeaderImage/>
+          <HeaderImage />
         </div>
         <div className={classes.imagesLine}>
           <Header />
         </div>
       </header>
       <div className={classes.body}>
-        <Body />  
+        <Body />
       </div>
     </div>
-
   );
 }

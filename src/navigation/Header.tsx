@@ -1,17 +1,21 @@
 import React from 'react';
 import Logo from '../components/Logo';
-import UserAvatar from '../components/UserAvatar';
-import LogButton from '../components/LogButton';
-import { useHeaderStyles } from '../styles/styles';
+import LoggingIn from '../components/LoggingIn';
+import { Grid } from '@material-ui/core';
 
 export default function Header(props) {
-  const classes = useHeaderStyles(props.theme);
 
   return (
-      <>
-        <Logo />
-        <LogButton />
-        <UserAvatar />
-      </>
+    <>
+      <Grid container>
+        <Grid item sm={12} md={9} lg={9}>
+          <Logo />
+        </Grid>
+
+        <Grid item sm={12} md={3} lg={3}>
+          <LoggingIn />
+        </Grid>
+      </Grid>
+    </>
   );
 }

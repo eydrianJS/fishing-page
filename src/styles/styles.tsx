@@ -1,12 +1,14 @@
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Hidden } from '@material-ui/core';
 
 export const useMainPageStyles = makeStyles((theme: Theme) =>
   createStyles({
     header: {
       height: '80px',
       width: '100%',
-      float: 'left'
+      float: 'left',
+      position: 'fixed'
     },
     images: {
       position: 'fixed',
@@ -16,6 +18,7 @@ export const useMainPageStyles = makeStyles((theme: Theme) =>
       overflow: 'hidden'
     },
     imagesLine: {
+      overflow: 'hidden',
       position: 'fixed',
       top: 0,
       left: 0,
@@ -26,22 +29,22 @@ export const useMainPageStyles = makeStyles((theme: Theme) =>
     },
     body: {
       position: 'relative',
-      top: '120px'
+      top: '260px'
     }
   }),
 );
 
 export const useBodyStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        paper: {
-            padding: theme.spacing(2),
-            textAlign: 'center',
-            color: theme.palette.text.secondary,
-        },
-    }),
+  createStyles({
+    root: {
+      width: "calc(100% - 24px)"
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }),
 );
 
 export const useHeaderStyles = makeStyles((theme: Theme) =>
@@ -58,37 +61,37 @@ export const useHeaderStyles = makeStyles((theme: Theme) =>
 );
 
 export const useButtonLogStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        userAvatar: {
-            float: "right"
-        },
-        button: {
-            position: 'fixed',
-            width: '175px',
-            height: '50px',
-            right: '95px',
-            top: '16px',
-            background: '#FBB040',
-            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            borderRadius: '25px',
-            cursor: 'pointer'
-        }
-    }),
+  createStyles({
+    userAvatar: {
+      float: "right"
+    },
+    button: {
+      position: 'relative',
+      width: '175px',
+      height: '50px',
+      right: '95px',
+      top: '16px',
+      background: '#FBB040',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      borderRadius: '25px',
+      cursor: 'pointer'
+    }
+  }),
 );
 
 export const useUserAvatarStyles = makeStyles((theme: Theme) =>
   createStyles({
     userAvatar: {
-      float:"right",
+      float: "right",
       width: '51.27px',
       height: '60px',
     },
     bigAvatar: {
-      position: 'fixed',
+      position: 'relative',
       width: '51.27px',
       height: '60px',
-      right: '293.73px',
-      top: '17px',
+      right: '103.73px',
+      top: '23px',
       "& > img": {
         backgroundColor: '#ffffff'
       }
@@ -97,14 +100,14 @@ export const useUserAvatarStyles = makeStyles((theme: Theme) =>
 );
 
 export const useLogoStyles = makeStyles((theme: Theme) =>
-createStyles({
+  createStyles({
     images: {
-        float: 'left',
-        position: 'fixed',
-        width: '341px',
-        height: '74px',
-        left: '130px',
-        top: '5px'
+      float: 'left',
+      position: 'relative',
+      width: '341px',
+      height: '74px',
+      left: '30px',
+      top: '5px'
     }
-}),
+  }),
 );
