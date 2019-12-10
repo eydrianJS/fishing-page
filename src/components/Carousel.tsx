@@ -1,38 +1,45 @@
-import React from "react";
-import { Gallery, GalleryImage } from "react-gesture-gallery";
+import React, { useState, useEffect } from 'react';
+import ItemsCarousel from 'react-items-carousel';
+import range from 'lodash/range';
 
-const images = [
-  "https://images.unsplash.com/photo-1559666126-84f389727b9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80",
-  "https://images.unsplash.com/photo-1557389352-e721da78ad9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-  "https://images.unsplash.com/photo-1553969420-fb915228af51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80",
-  "https://images.unsplash.com/photo-1550596334-7bb40a71b6bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-  "https://images.unsplash.com/photo-1550640964-4775934de4af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-];
 
 export default function MyCarousel() {
-  const [index, setIndex] = React.useState(0);
+    
+    const [activeItemIndex, setActioveItemIndex] = useState<number>(0);
+    const [children, setChildren] = useState<any[]>([]);
+    
+    const createChildren = (n: number) => range(n).map((i: number) => <div key={i} style={{ height: 200, background: '#333' }}>{i}</div>);
+    // 
+    useEffect(() => {
+        setChildren(createChildren(20));
+    }, [])
+    const changeActiveItem = (activeItemIndex: number) => setActioveItemIndex(activeItemIndex)
+    return (
+        <ItemsCarousel
+            Placeholder configurations
+            enablePlaceholder
+            numberOfPlaceholderItems={5}
+            minimumPlaceholderTime={1000}
+            placeholderItem={<div style={{ height: 200, background: '#900' }}>Placeholder</div>}
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      if (index === 4) {
-        setIndex(0);
-      } else {
-        setIndex(prev => prev + 1);
-      }
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [index]);
+            // Carousel configurations
+            numberOfCards={3}
+            gutter={12}
+            showSlither={true}
+            firstAndLastGutter={true}
+            freeScrolling={false}
 
-  return (
-    <Gallery
-      index={index}
-      onRequestChange={i => {
-        setIndex(i);
-      }}
-    >
-      {images.map(image => (
-        <GalleryImage objectFit="contain" key={image} src={image} />
-      ))}
-    </Gallery>
-  );
+            // Active item configurations
+            requestToChangeActive={changeActiveItem}
+            activeItemIndex={activeItemIndex}
+            activePosition={'center'}
+
+            chevronWidth={24}
+            rightChevron={'>'}
+            leftChevron={'<'}
+            outsideChevron={false}
+        >
+            {children}
+        </ItemsCarousel>
+    )
 }
