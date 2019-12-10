@@ -1,24 +1,10 @@
 import React from 'react';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        paper: {
-            padding: theme.spacing(2),
-            textAlign: 'center',
-            color: theme.palette.text.secondary,
-        },
-    }),
-);
+import { useBodyStyles } from '../styles/styles';
 
 export default function Body(props) {
-    const classes = useStyles(props.theme);
-
+    const classes = useBodyStyles(props.theme);
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
