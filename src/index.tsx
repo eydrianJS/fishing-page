@@ -1,15 +1,6 @@
-import  * as React from 'react';
-import  * as ReactDOM from 'react-dom';
-import MainPage from './navigation/MainPage';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-export default function App(): JSX.Element {
-    return (
-        <div>
-            <MainPage />
-        </div>
-    )
-}
+ReactDOM.render(<App />, document.getElementById('root'));
 
-const root = document.getElementById('root')
-
-ReactDOM.render(<App />, root);

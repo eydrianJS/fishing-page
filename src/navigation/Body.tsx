@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { useBodyStyles } from '../styles/styles';
 import MyCarousel from '../components/Carousel';
 
-export default function Body(props) {
-    const classes = useBodyStyles(props.theme);
+export default function Body() {
+    const classes = useBodyStyles();
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>

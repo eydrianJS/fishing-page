@@ -1,6 +1,5 @@
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Hidden } from '@material-ui/core';
 
 export const useMainPageStyles = makeStyles((theme: Theme) =>
   createStyles({

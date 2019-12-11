@@ -1,9 +1,9 @@
 import  * as React from 'react'
-import MyImage from '../../public/images/logo.png'
+import MyImage from '../images/logo.png'
 import { useLogoStyles } from '../styles/styles';
 
-export default function Logo(props) {
-    const classes = useLogoStyles(props.theme);
+export default function Logo() {
+    const classes = useLogoStyles();
 
     return (
         <div className={classes.images}>

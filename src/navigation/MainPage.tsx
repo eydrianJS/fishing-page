@@ -5,8 +5,8 @@ import Header from './Header';
 import HeaderImage from '../components/HeaderImage';
 import { useMainPageStyles } from '../styles/styles';
 
-export default function MainPage(props) {
-  const classes = useMainPageStyles(props.theme);
+export default function MainPage() {
+  const classes = useMainPageStyles();
 
   return (
     <div>

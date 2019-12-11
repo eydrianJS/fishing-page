@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MyImage from '../../public/images/rectangle6.png'
+import MyImage from '../images/rectangle6.png'
 
 export default function HeaderImage() {
     return (
