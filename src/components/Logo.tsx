@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import  * as React from 'react'
 import MyImage from '../../public/images/logo.png'
 import { useLogoStyles } from '../styles/styles';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import  * as React from 'react';
 import Logo from '../components/Logo';
 import LoggingIn from '../components/LoggingIn';
 import { Grid } from '@material-ui/core';

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import MyImage from '../../public/images/rectangle6.png'
 
 export default function HeaderImage() {

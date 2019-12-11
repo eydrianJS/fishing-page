@@ -1,4 +1,4 @@
-import React from 'react'
+import  * as React from 'react'
 import DefaultAvatar from '../../public/images/avatar.png'
 import { Avatar } from '@material-ui/core';
 import { useUserAvatarStyles } from '../styles/styles';

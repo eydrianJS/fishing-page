@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useButtonLogStyles } from '../styles/styles';
 
 export default function LogButton(props) {
